@@ -5,7 +5,7 @@ int storage[100];
 int count;
 void *gen()
 {
-    int n,a=0,b=1,c=2,d;
+    int n,a=0,b=1,c=2;
     printf("Enter Term: ");
     scanf("%d", &n);
     count=n;
@@ -13,10 +13,7 @@ void *gen()
 	storage[1]=b;
 	for(c=2;c<n;c++)
 	{
-		d=a+b;
-    	storage[c]=d;
-    	a=b;
-    	b=d;
+    	storage[c]=storage[c-1]+storage[c-2];
 	}	
 }
 void *fibo()
@@ -41,4 +38,3 @@ int main()
     printf ("\n");
     return 0;
 }
-
